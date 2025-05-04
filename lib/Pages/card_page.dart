@@ -32,25 +32,24 @@ class _CardPageState extends State<CardPage> {
       author: widget.author,
     );
 
-    return Padding(
-      padding: const EdgeInsets.only(right: 8),
-      child: Row(
-        children: [
-          Container(
-            height: 300,
-            width: 280,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: const Color.fromARGB(255, 23, 30, 95),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
+    return SizedBox(
+      height: 300,
+      child: Padding(
+        padding: const EdgeInsets.only(right: 8),
+        child: Row(
+          children: [
+            Container(
+              height: 270,
+              width: 280,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: const Color.fromARGB(255, 23, 30, 95),
+              ),
               child: Column(
                 children: [
-                  // Display the image from the CardController's imageUrl
                   Container(
                     height: 200,
-                    width: 270,
+                    width: 280,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: const Color.fromARGB(255, 7, 8, 17),
@@ -63,40 +62,40 @@ class _CardPageState extends State<CardPage> {
                       ),
                     ),
                   ),
-                  // Display the subtitle and date from the CardController
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        _cardController.tag,
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: const Color.fromARGB(255, 238, 234, 234),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 6),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          _cardController.tag,
+                          style: const TextStyle(
+                            fontSize: 15,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      Text(
-                        _cardController.time,
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: const Color.fromARGB(255, 238, 234, 234),
+                        Text(
+                          _cardController.time,
+                          style: const TextStyle(
+                            fontSize: 15,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  // Display the title of the card from the CardController
-                  Row(
-                    children: [
-                      Text(
-                        _cardController.title,
-                        style: TextStyle(fontSize: 25, color: Colors.white),
-                      ),
-                    ],
+                        Text(
+                          _cardController.title,
+                          style: const TextStyle(
+                            fontSize: 15,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

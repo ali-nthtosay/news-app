@@ -21,28 +21,26 @@ class _HomepageState extends State<Homepage> {
         ),
       ),
       backgroundColor: const Color.fromARGB(68, 21, 21, 22),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(5),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Important News',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                  Text(
-                    'See all',
-                    style: Theme.of(context).textTheme.labelSmall,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
+      body: Padding(
+        padding: const EdgeInsets.all(5),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Important News',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                Text('See all', style: Theme.of(context).textTheme.labelSmall),
+              ],
+            ),
+            const SizedBox(height: 20),
 
-              // Cards horizontally scrollable
-              Row(
+            // Cards horizontally scrollable
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
                 children: [
                   CardPage(
                     imageUrl:
@@ -70,52 +68,24 @@ class _HomepageState extends State<Homepage> {
                   ),
                 ],
               ),
+            ),
 
-              const SizedBox(height: 15),
+            const SizedBox(height: 15),
 
-              // News for you title
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'News for you',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                  Text(
-                    'See all',
-                    style: Theme.of(context).textTheme.labelSmall,
-                  ),
-                ],
-              ),
+            // News for you title
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'News for you',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                Text('See all', style: Theme.of(context).textTheme.labelSmall),
+              ],
+            ),
 
-              const SizedBox(height: 20),
-              Column(
-                children: [
-                  NewsTeil(
-                    imageUrl:
-                        'https://images.unsplash.com/photo-1576158114254-3ba81558b87d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-                    title: 'title',
-                    time: 'time',
-                    author: 'author',
-                  ),
-                  NewsTeil(
-                    imageUrl:
-                        'https://images.unsplash.com/photo-1576158114254-3ba81558b87d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-                    title: 'title',
-                    time: 'time',
-                    author: 'author',
-                  ),
-                  NewsTeil(
-                    imageUrl:
-                        'https://images.unsplash.com/photo-1576158114254-3ba81558b87d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D',
-                    title: 'title',
-                    time: 'time',
-                    author: 'author',
-                  ),
-                ],
-              ),
-            ],
-          ),
+            const SizedBox(height: 20),
+          ],
         ),
       ),
     );
